@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:orientation="vertical"
+    tools:context="com.example.mommysfood.MainActivity">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:text="Employee Name" />
+
+            <EditText
+
+                android:id="@+id/u_name"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:layout_marginStart="10sp"
+                android:width="150px" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:text="Employee Number" />
+
+            <EditText
+                android:id="@+id/u_empid"
+                android:width="200dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_marginStart="10sp"
+                android:layout_marginLeft="10sp" />
+        </TableRow>
+
+<!--        <TableRow>-->
+<!--            <TextView-->
+<!--                android:text="Dish Consumed"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_column="1" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/u_dish"-->
+<!--                android:layout_width="200dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="10sp"-->
+<!--                android:layout_marginStart="10sp"-->
+<!--                android:inputType="textPersonName"/>-->
+
+<!--        </TableRow>-->
+
+<!--        <TableRow>-->
+
+<!--            <TextView-->
+<!--                android:text="Bill Amount"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_column="1" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/u_bill"-->
+<!--                android:width="200dp"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_column="2"-->
+<!--                android:layout_marginStart="10sp"-->
+<!--                android:layout_marginLeft="10sp" />-->
+<!--        </TableRow>-->
+
+        <TableRow>
+
+            <TextView
+                android:text="Date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+            <EditText
+                android:id="@+id/u_date"
+                android:width="200dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_marginStart="10sp"
+                android:layout_marginLeft="10sp" />
+        </TableRow>
+
+        <Button
+            android:id="@+id/add_dish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_dish" />
+
+    </TableLayout>
+
+
+
+
+<!--        -->
+
+        <!--            android:onClick="saveRecord"/>-->
+        <!--        <Button-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="View"-->
+        <!--            android:onClick="viewRecord"/>-->
+        <!--        <Button-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Update"-->
+        <!--            android:onClick="updateRecord"/>-->
+        <!--        <Button-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Delete"-->
+        <!--            android:onClick="deleteRecord"/>-->
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="377dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="95dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="225dp"
+        android:layout_marginTop="15sp"
+        android:text="@string/total_amount" />
+
+    <TextView
+        android:id="@+id/globe_rate"
+        android:layout_width="37dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="320sp"
+        android:layout_marginTop="-23dp"
+        android:text="0" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/save"
+        android:textAlignment="center" />
+
+</LinearLayout>

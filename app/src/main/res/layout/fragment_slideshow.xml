@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textAlignment="center">
+
+
+    <TextView
+        android:id="@+id/veg"
+        android:layout_width="175dp"
+        android:layout_height="25dp"
+        android:text="Vegeterian"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.094" />
+
+    <TableLayout
+        android:id="@+id/table_veg"
+        android:layout_width="443dp"
+        android:layout_height="165dp"
+        android:layout_marginBottom="400dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/veg">
+
+
+        <TableRow
+            android:layout_width="403dp"
+            android:layout_height="35dp"
+            app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/veg"
+            app:layout_constraintVertical_bias="0.077">
+
+            <CheckBox
+                android:id="@+id/checkBox1"
+                android:layout_width="113dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="70dp"
+                android:text="Chapathi" />
+
+            <CheckBox
+                android:id="@+id/checkBox2"
+                android:layout_width="113dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="80dp"
+                android:text="Tomato Rice" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="403dp"
+            android:layout_height="35dp"
+            app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/veg"
+            app:layout_constraintVertical_bias="0.077">
+
+            <CheckBox
+                android:id="@+id/checkBox3"
+                android:layout_width="113dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="70dp"
+                android:text="Veg Biriyani" />
+
+            <CheckBox
+                android:id="@+id/checkBox4"
+                android:layout_width="113dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="80dp"
+                android:text="Curd Rice" />
+
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="403dp"
+            android:layout_height="35dp"
+            app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/veg"
+            app:layout_constraintVertical_bias="0.077">
+
+            <CheckBox
+                android:id="@+id/checkBox5"
+                android:layout_width="113dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="70dp"
+                android:text="Meals-Ltd" />
+
+            <CheckBox
+                android:id="@+id/checkBox6"
+                android:layout_width="113dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="80dp"
+                android:text="Lemon Rice" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="403dp"
+            android:layout_height="35dp"
+            app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/veg"
+            app:layout_constraintVertical_bias="0.077">
+
+            <CheckBox
+                android:id="@+id/checkBox7"
+                android:layout_width="113dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="70dp"
+                android:text="Meals-Ultd" />
+
+            <CheckBox
+                android:id="@+id/checkBox8"
+                android:layout_width="136dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="80dp"
+                android:text="Cocunut Rice" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="403dp"
+            android:layout_height="35dp"
+            app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/veg"
+            app:layout_constraintVertical_bias="0.077">
+
+            <CheckBox
+                android:id="@+id/checkBox9"
+                android:layout_width="113dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="70dp"
+                android:text="Vada" />
+
+            <CheckBox
+                android:id="@+id/checkBox10"
+                android:layout_width="113dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="80dp"
+                android:text="Carrot Rice" />
+
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/nonveg"
+        android:layout_width="175dp"
+        android:layout_height="25dp"
+        android:text="Non-Vegeterian"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/table_non-veg"
+        android:layout_width="443dp"
+        android:layout_height="165dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/veg"
+        app:layout_constraintVertical_bias="0.705">>
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/checkBox11"
+                android:layout_width="113dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="70dp"
+                android:text="CheckBox" />
+
+            <CheckBox
+                android:id="@+id/checkBox12"
+                android:layout_width="113dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="80dp"
+                android:text="CheckBox" />
+        </TableRow>
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/checkBox13"
+                android:layout_width="113dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="70dp"
+                android:text="CheckBox" />
+
+            <CheckBox
+                android:id="@+id/checkBox14"
+                android:layout_width="113dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="80dp"
+                android:text="CheckBox" />
+        </TableRow>
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/checkBox15"
+                android:layout_width="113dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="70dp"
+                android:text="CheckBox" />
+
+            <CheckBox
+                android:id="@+id/checkBox16"
+                android:layout_width="113dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="80dp"
+                android:text="CheckBox" />
+        </TableRow>
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/checkBox17"
+                android:layout_width="113dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="70dp"
+                android:text="CheckBox" />
+
+            <CheckBox
+                android:id="@+id/checkBox18"
+                android:layout_width="113dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="80dp"
+                android:text="CheckBox" />
+        </TableRow>
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/checkBox19"
+                android:layout_width="113dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="70dp"
+                android:text="CheckBox" />
+
+            <CheckBox
+                android:id="@+id/checkBox20"
+                android:layout_width="113dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="80dp"
+                android:text="CheckBox" />
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/nonveg"
+        app:layout_constraintVertical_bias="0.772" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

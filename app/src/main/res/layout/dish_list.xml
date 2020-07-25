@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+
+                <TextView
+                    android:id="@+id/dishname"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="animal"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#000"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/quantity"
+                    android:layout_marginLeft="20dp"
+                    android:text="1"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/amount"
+                    android:layout_marginLeft="60dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/decrease"
+                    android:layout_marginLeft="20dp"
+                    android:text="Minus"
+                    android:textColor="#000" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/increase"
+                    android:text="Plus"
+                    android:textColor="#000" />
+        </LinearLayout>
+</LinearLayout>
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/dishlist"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_margin="10dp"-->
+<!--    android:layout_marginStart="10dp"-->
+<!--    android:orientation="horizontal">-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:orientation="vertical">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/dishname"-->
+<!--            android:layout_width="128dp"-->
+<!--            android:layout_height="37dp"-->
+<!--            android:layout_margin="24dp"-->
+<!--            android:layout_marginStart="28dp"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:padding="10dp"-->
+<!--            android:text="DishName"-->
+<!--            android:textAlignment="textStart"-->
+<!--            android:textSize="16sp"/>-->
+<!--&lt;!&ndash;            app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:layout_constraintTop_toTopOf="parent" />&ndash;&gt;-->
+
+<!--        &lt;!&ndash;            app:layout_constraintStart_toEndOf="@+id/dishname"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:layout_constraintTop_toTopOf="parent" />&ndash;&gt;-->
+
+<!--        <Button-->
+<!--            android:id="@+id/decrease"-->
+<!--            android:layout_width="46dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_margin="24dp"-->
+<!--            android:layout_marginStart="14dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:text="-"-->
+<!--            android:textSize="18sp" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/increase"-->
+<!--            android:layout_width="46dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginStart="2dp"-->
+<!--            android:layout_marginTop="24dp"-->
+<!--            android:text="+"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/quantity"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/quantity"-->
+<!--            android:layout_width="39dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_marginStart="1dp"-->
+<!--            android:layout_marginTop="32dp"-->
+<!--            android:text="0"-->
+<!--            android:textAlignment="center"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/decrease"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView6"-->
+<!--            android:layout_width="58dp"-->
+<!--            android:layout_height="29dp"-->
+<!--            android:layout_marginStart="7dp"-->
+<!--            android:layout_marginTop="32dp"-->
+<!--            android:padding="5dp"-->
+<!--            android:textSize="12sp"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/increase"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+        <!--<androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+        <!--    android:layout_width="match_parent"-->
+        <!--    android:layout_height="wrap_content"-->
+        <!--    android:orientation="horizontal"-->
+        <!--    android:weightSum="3"-->
+        <!--    android:padding="10dp">-->
+
+
+        <!--<TextView-->
+        <!--android:id="@+id/title"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="24dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:text="@string/title"-->
+        <!--android:textColor="#000000"-->
+        <!--android:textSize="24sp"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/Description"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginEnd="16dp"-->
+        <!--android:layout_marginStart="24dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:text="@string/description"-->
+        <!--android:textSize="16sp"-->
+        <!--android:textStyle="italic"-->
+        <!--app:layout_constraintEnd_toStartOf="@+id/priority"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/title" />-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/priority"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginEnd="28dp"-->
+        <!--android:layout_marginTop="24dp"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:text="@string/priority"-->
+        <!--android:textSize="24sp"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintHorizontal_bias="1.0"-->
+        <!--app:layout_constraintStart_toEndOf="@+id/title"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
