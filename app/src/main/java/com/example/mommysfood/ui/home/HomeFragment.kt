@@ -81,6 +81,7 @@ private class MyCustomAdapter(context: Context, username: String,val useramount 
     private val mContext: Context
     val databaseHandler: DatabaseHandler = DatabaseHandler(context)
     var flag = databaseHandler.getUser(username)
+
     init {
         mContext = context
         Price=0
@@ -101,11 +102,12 @@ private class MyCustomAdapter(context: Context, username: String,val useramount 
     override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
         databaseHandler.close()
         val layoutInflater = LayoutInflater.from(mContext);
+
         val rowmain = layoutInflater.inflate(R.layout.dish_consumed, p2, false)
         if (flag.count == 0) {
             Toast.makeText(mContext, "No Transaction to show", Toast.LENGTH_SHORT).show()
         } else {
-            val name = rowmain.findViewById<TextView>(R.id.dishname)
+            val name = rowmain.findViewById<TextView>(R.id.empname)
             val id = rowmain.findViewById<TextView>(R.id.identitynumber)
             val period = rowmain.findViewById<TextView>(R.id.datetime)
             val consumed = rowmain.findViewById<TextView>(R.id.dishconsumed)
@@ -124,8 +126,8 @@ private class MyCustomAdapter(context: Context, username: String,val useramount 
                 currentDate = flag.getString(flag.getColumnIndex("date"))
                 Price = Price+billAmount
             }
-            name.text = employeeName
             id.text = employeeId
+            name.text = employeeName
             period.text = currentDate
             amount.text = billAmount.toString()
             consumed.text = dishConsumed

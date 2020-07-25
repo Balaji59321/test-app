@@ -99,7 +99,7 @@ class DatabaseHandler(context: Context) :
 
     fun getUser(username : String): Cursor {
         val db= this.readableDatabase
-        val query = "SELECT * from $TABLE_CONTACTS WHERE ${KEY_NAME} = \"$username\""
+        val query = "SELECT * from $TABLE_CONTACTS WHERE ${KEY_NAME} = \'$username\'"
         val cursor = db.rawQuery(query, null)
         return cursor
     }
