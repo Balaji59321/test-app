@@ -3,6 +3,7 @@ package com.example.mommysfood.ui.home
 import android.Manifest
 import android.content.ContentValues.TAG
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
@@ -56,35 +57,58 @@ class HomeFragment : Fragment() {
         var user_name = ""
         val user_amount = root.findViewById<TextView>(R.id.useramount)
         val userlist = root.findViewById<ListView>(R.id.listview_user)
+        val shareBill = root.findViewById<Button>(R.id.share_bill)
+        val bill =0
+        if (user_amount.text.toString() <= 0.toString()){
+            shareBill.isEnabled = false
+        }
         get_data.setOnClickListener {
             user_name = usr_name.text.toString()
             user_amount.text=0.toString()
-            val customAdapter = MyCustomAdapter(root.context, user_name,user_amount)
+            val customAdapter = MyCustomAdapter(root.context, user_name,user_amount,shareBill,bill)
             userlist.adapter = customAdapter
+            if (user_amount.text.toString() <= 0.toString()){
+                shareBill.isEnabled = false
+            }
+            println(bill)
         }
         remove_entry.setOnClickListener {
             val databaseHandler = DatabaseHandler(context!!)
             val returns =  databaseHandler.amountPaid(user_name)
             Price=0
             user_amount.text=0.toString()
-            user_name.trim()
-            val customAdapter = MyCustomAdapter(root.context, user_name,user_amount)
+            user_identity.text.clear()
+            val customAdapter = MyCustomAdapter(root.context, user_name,user_amount,shareBill,bill)
             userlist.adapter = customAdapter
             Toast.makeText(root.context,"Bill Paid Successfully",Toast.LENGTH_SHORT).show()
+            if (user_amount.text.toString() <= 0.toString()){
+                shareBill.isEnabled = false
+            }
+        }
+        shareBill.setOnClickListener {
+            val shareIntent = Intent(Intent.ACTION_SEND)
+            shareIntent.type = "text/plain"
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Download this App")
+            val bill= 100
+            val app_url = "Hi there !!\nTotal Due Bill Amount ${bill}"
+            shareIntent.putExtra(Intent.EXTRA_TEXT, app_url)
+            startActivity(Intent.createChooser(shareIntent, "Share via"))
         }
         return root
     }
 }
 
-private class MyCustomAdapter(context: Context, username: String,val useramount : TextView) : BaseAdapter() {
+private class MyCustomAdapter(context: Context, username: String, useramount : TextView, val shareBill: Button,
+                              var bill : Int) : BaseAdapter() {
 
     private val mContext: Context
+    private val user_amount: TextView
     val databaseHandler: DatabaseHandler = DatabaseHandler(context)
     var flag = databaseHandler.getUser(username)
 
     init {
         mContext = context
-        Price=0
+        user_amount = useramount
     }
 
     override fun getCount(): Int {
@@ -132,7 +156,14 @@ private class MyCustomAdapter(context: Context, username: String,val useramount 
             amount.text = billAmount.toString()
             consumed.text = dishConsumed
         }
-        useramount.text = Price.toString()
+        user_amount.text = Price.toString()
+        bill = Price
+        if (user_amount.text.toString() <= 0.toString()){
+            shareBill.isEnabled = false
+        }
+        else{
+            shareBill.isEnabled = true
+        }
         return rowmain
     }
 }

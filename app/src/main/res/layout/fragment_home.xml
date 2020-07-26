@@ -53,12 +53,12 @@
             android:id="@+id/totalamounttext"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="170dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="280dp"
             android:layout_weight="1"
             android:text="Due Amount : "
-            android:textAlignment="textEnd"
+            android:textAlignment="viewStart"
             android:textSize="18sp" />
 
         <TextView
@@ -66,17 +66,29 @@
             android:layout_width="56dp"
             android:layout_height="36dp"
             android:layout_gravity="start"
-            android:layout_marginStart="270dp"
+            android:layout_marginStart="150dp"
             android:layout_marginTop="-27dp"
-            android:layout_marginEnd="0dp"
+            android:layout_marginEnd="200dp"
             android:text="0"
+            android:textAlignment="viewStart"
             android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/share_bill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="220dp"
+            android:layout_marginTop="-50dp"
+            android:layout_marginEnd="30dp"
+            android:layout_weight="1"
+            android:text="Share Bill" />
 
         <Button
             android:id="@+id/fullpaid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="30dp"
             android:layout_weight="1"
             android:text="@string/all_paid" />

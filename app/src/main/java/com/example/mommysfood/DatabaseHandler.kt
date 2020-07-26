@@ -106,7 +106,6 @@ class DatabaseHandler(context: Context) :
 
     fun amountPaid(username : String) {
         val db= this.writableDatabase
-        //val query = "SELECT * from $TABLE_CONTACTS WHERE ${KEY_NAME} = \"$username\""
         db.delete(TABLE_CONTACTS,"name= '${username}'",null)
         //val query = "DELETE from $TABLE_CONTACTS WHERE ${KEY_NAME} = \"$username\";"
         //val cursor = db.rawQuery(query, null)

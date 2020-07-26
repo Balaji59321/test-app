@@ -20,10 +20,6 @@ import com.example.mommysfood.ui.tools.dishmodelclass
 class GalleryFragment : Fragment() {
     private lateinit var galleryViewModel: GalleryViewModel
 
-    companion object {
-        lateinit var dishModelArrayList: ArrayList<dishconsumedmodelclass>
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -37,16 +33,11 @@ class GalleryFragment : Fragment() {
         if (data == null) {
             Toast.makeText(root.context, "No Record", Toast.LENGTH_LONG).show()
         } else {
-//            val arrayAdapter: ArrayAdapter<*>
-            val databaseHandler: DatabaseHandler = DatabaseHandler(this.context!!)
-            val status = databaseHandler.getallEmployee()
+            val arrayAdapter: ArrayAdapter<*>
+
             val userlist = root.findViewById<ListView>(R.id.listview)
-//            val entry_list = ArrayList<dishconsumedmodelclass>()
-//            for (i in 0..status.count()-1){
-//                entry_list.add(dishconsumedmodelclass("","","","",""))
-//            }
-//            dishModelArrayList = entry_list
-//            arrayAdapter = ArrayAdapter(root.context, R.layout.dish_consumed, status)
+
+            //arrayAdapter = ArrayAdapter(root.context, R.layout.dish_consumed, status)
             val customAdapter = MyCustomAdapter1(root.context)
             userlist.adapter = customAdapter
         }
@@ -56,6 +47,7 @@ class GalleryFragment : Fragment() {
 
 private class MyCustomAdapter1(context: Context) : BaseAdapter() {
 
+    val dishModelArrayList: ArrayList<dishconsumedmodelclass>
     private val mContext: Context
     private val layoutInflater = LayoutInflater.from(context)
     val databaseHandler: DatabaseHandler = DatabaseHandler(context)
@@ -65,6 +57,12 @@ private class MyCustomAdapter1(context: Context) : BaseAdapter() {
 
     init {
         mContext = context
+        val status = databaseHandler.getallEmployee()
+        val entry_list = ArrayList<dishconsumedmodelclass>()
+        for (i in 0..status.count() - 1) {
+            entry_list.add(dishconsumedmodelclass("", "", "", "", ""))
+        }
+        dishModelArrayList = entry_list
     }
 
     override fun getCount(): Int {
@@ -87,7 +85,7 @@ private class MyCustomAdapter1(context: Context) : BaseAdapter() {
         if (flag.count == 0) {
             Toast.makeText(mContext, "No Transaction to show", Toast.LENGTH_SHORT).show()
         } else {
-            val name = rowmain.findViewById<TextView>(R.id.dishname)
+            val name = rowmain.findViewById<TextView>(R.id.empname)
             val id = rowmain.findViewById<TextView>(R.id.identitynumber)
             val period = rowmain.findViewById<TextView>(R.id.datetime)
             val consumed = rowmain.findViewById<TextView>(R.id.dishconsumed)
@@ -97,8 +95,8 @@ private class MyCustomAdapter1(context: Context) : BaseAdapter() {
             var dishConsumed = ""
             var billAmount = 0
             var currentDate = ""
-            flag.position+1
-            if(flag.moveToNext()) {
+            flag.position + 1
+            if (flag.moveToNext()) {
                 employeeId = flag.getString(flag.getColumnIndex("id"))
                 employeeName = flag.getString(flag.getColumnIndex("name"))
                 dishConsumed = flag.getString(flag.getColumnIndex("dish"))
@@ -106,7 +104,7 @@ private class MyCustomAdapter1(context: Context) : BaseAdapter() {
                 currentDate = flag.getString(flag.getColumnIndex("date"))
                 //flag.position = flag.position+1
             }
-            name.text =  employeeName
+            name.text = employeeName
             id.text = employeeId
             period.text = currentDate
             amount.text = billAmount.toString()
@@ -115,7 +113,6 @@ private class MyCustomAdapter1(context: Context) : BaseAdapter() {
         return rowmain
     }
 }
-
 //        val viewHolder: ViewHolder
 //        val rowView: View?
 //        if (view == null) {
@@ -130,19 +127,13 @@ private class MyCustomAdapter1(context: Context) : BaseAdapter() {
 //            //println("else executed")
 //        }
 //
-//        viewHolder.dishname.text = GalleryFragment.dishModelArrayList.get(position).empanme
-//        viewHolder.identitynumber.text = GalleryFragment.dishModelArrayList.get(position).empno
-//        viewHolder.datetime.text = GalleryFragment.dishModelArrayList.get(position).datetime
-//        viewHolder.dishconsumed.text = GalleryFragment.dishModelArrayList.get(position).dishconsumed
-//        viewHolder.totalamount.text =  GalleryFragment.dishModelArrayList.get(position).price
-//
 //        val layoutInflater = LayoutInflater.from(mContext);
 //        val rowmain = layoutInflater.inflate(R.layout.dish_consumed, viewGroup, false)
 //
 //        if (flag.count == 0) {
 //            Toast.makeText(mContext, "No Transaction to show", Toast.LENGTH_SHORT).show()
 //        } else {
-//            val name = rowmain.findViewById<TextView>(R.id.dishname)
+//            val name = rowmain.findViewById<TextView>(R.id.empname)
 //            val id = rowmain.findViewById<TextView>(R.id.identitynumber)
 //            val period = rowmain.findViewById<TextView>(R.id.datetime)
 //            val consumed = rowmain.findViewById<TextView>(R.id.dishconsumed)
@@ -153,24 +144,29 @@ private class MyCustomAdapter1(context: Context) : BaseAdapter() {
 //            var billAmount = 0
 //            var currentDate = ""
 //            flag.position + 1
-//            if (flag.moveToNext()) {
+//            if (flag.moveToNext()){
 //                employeeId = flag.getString(flag.getColumnIndex("id"))
 //                employeeName = flag.getString(flag.getColumnIndex("name"))
 //                dishConsumed = flag.getString(flag.getColumnIndex("dish"))
 //                billAmount = flag.getInt(flag.getColumnIndex("amount"))
 //                currentDate = flag.getString(flag.getColumnIndex("date"))
 //                //flag.position = flag.position+1
+////                viewHolder.dishname.text = MyCustomAdapter1.dishModelArrayList.get(position).empanme
+////                viewHolder.identitynumber.text = GalleryFragment.dishModelArrayList.get(position).empno
+////                viewHolder.datetime.text = GalleryFragment.dishModelArrayList.get(position).datetime
+////                viewHolder.dishconsumed.text = GalleryFragment.dishModelArrayList.get(position).dishconsumed
+////                viewHolder.totalamount.text =  GalleryFragment.dishModelArrayList.get(position).price
 //            }
 //            name.text = employeeName
 //            id.text = employeeId
 //            period.text = currentDate
 //            amount.text = billAmount.toString()
 //            consumed.text = dishConsumed
-//            GalleryFragment.dishModelArrayList.get(position).empanme = employeeName
-//            GalleryFragment.dishModelArrayList.get(position).empno = employeeId
-//            GalleryFragment.dishModelArrayList.get(position).datetime = currentDate
-//            GalleryFragment.dishModelArrayList.get(position).dishconsumed = dishConsumed
-//            GalleryFragment.dishModelArrayList.get(position).price = billAmount.toString()
+////            GalleryFragment.dishModelArrayList.get(position).empanme = employeeName
+////            GalleryFragment.dishModelArrayList.get(position).empno = employeeId
+////            GalleryFragment.dishModelArrayList.get(position).datetime = currentDate
+////            GalleryFragment.dishModelArrayList.get(position).dishconsumed = dishConsumed
+////            GalleryFragment.dishModelArrayList.get(position).price = billAmount.toString()
 //        }
 //        return rowView
 //    }
@@ -184,39 +180,5 @@ private class MyCustomAdapter1(context: Context) : BaseAdapter() {
 //    }
 //}
 
-//        databaseHandler.close()
-//        val layoutInflater = LayoutInflater.from(mContext);
-//        val rowmain = layoutInflater.inflate(R.layout.dish_consumed, p2, false)
-//
-//        if (flag.count == 0) {
-//            Toast.makeText(mContext, "No Transaction to show", Toast.LENGTH_SHORT).show()
-//        } else {
-//            val name = rowmain.findViewById<TextView>(R.id.dishname)
-//            val id = rowmain.findViewById<TextView>(R.id.identitynumber)
-//            val period = rowmain.findViewById<TextView>(R.id.datetime)
-//            val consumed = rowmain.findViewById<TextView>(R.id.dishconsumed)
-//            val amount = rowmain.findViewById<TextView>(R.id.totalamount)
-//            var employeeId = ""
-//            var employeeName = ""
-//            var dishConsumed = ""
-//            var billAmount = 0
-//            var currentDate = ""
-//            flag.position+1
-//            if(flag.moveToNext()) {
-//                employeeId = flag.getString(flag.getColumnIndex("id"))
-//                employeeName = flag.getString(flag.getColumnIndex("name"))
-//                dishConsumed = flag.getString(flag.getColumnIndex("dish"))
-//                billAmount = flag.getInt(flag.getColumnIndex("amount"))
-//                currentDate = flag.getString(flag.getColumnIndex("date"))
-//                //flag.position = flag.position+1
-//            }
-//            name.text =  employeeName
-//            id.text = employeeId
-//            period.text = currentDate
-//            amount.text = billAmount.toString()
-//            consumed.text = dishConsumed
-//        }
-//        return rowmain
-//    }
-//}
+
 
