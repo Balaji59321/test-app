@@ -25,7 +25,7 @@ class ShareFragment : Fragment() {
         val shareIntent = Intent(Intent.ACTION_SEND)
         shareIntent.type = "text/plain"
         shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Download this App")
-        val app_url = "Wanna Keep track of your status of food consumed by you.Download this awesome app from the playstore link <-URL->"
+        val app_url = "Wanna Keep track of your status of food consumed by you.Download this awesome app from the playstore link"
         shareIntent.putExtra(Intent.EXTRA_TEXT, app_url)
         startActivity(Intent.createChooser(shareIntent, "Share via"))
         return root

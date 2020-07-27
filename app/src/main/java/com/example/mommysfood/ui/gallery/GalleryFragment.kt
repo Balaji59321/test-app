@@ -1,12 +1,16 @@
 package com.example.mommysfood.ui.gallery
 
 import android.app.Activity
+import android.app.DatePickerDialog
 import android.content.Context
+import android.icu.text.SimpleDateFormat
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.example.mommysfood.DatabaseHandler
@@ -16,10 +20,13 @@ import com.example.mommysfood.ui.home.dishconsumedmodelclass
 import com.example.mommysfood.ui.tools.MyCustomAdapter
 import com.example.mommysfood.ui.tools.ToolsFragment
 import com.example.mommysfood.ui.tools.dishmodelclass
+import java.util.*
+import kotlin.collections.ArrayList
 
 class GalleryFragment : Fragment() {
     private lateinit var galleryViewModel: GalleryViewModel
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -30,6 +37,15 @@ class GalleryFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_gallery, container, false)
         val db = DatabaseHandler(this.context!!)
         var data = ArrayList<EmpModelClass>()
+        val dateSelect = root.findViewById<Button>(R.id.select_date)
+        val dateText = root.findViewById<TextView>(R.id.editTextDate)
+        val c = Calendar.getInstance()
+        val df = SimpleDateFormat("yyyy-MM-dd")
+        val formattedDate: String = df.format(c.time)
+        dateText.text = formattedDate
+        dateSelect.setOnClickListener {
+
+        }
         if (data == null) {
             Toast.makeText(root.context, "No Record", Toast.LENGTH_LONG).show()
         } else {
@@ -81,7 +97,6 @@ private class MyCustomAdapter1(context: Context) : BaseAdapter() {
         databaseHandler.close()
         val layoutInflater = LayoutInflater.from(mContext);
         val rowmain = layoutInflater.inflate(R.layout.dish_consumed, viewGroup, false)
-
         if (flag.count == 0) {
             Toast.makeText(mContext, "No Transaction to show", Toast.LENGTH_SHORT).show()
         } else {
